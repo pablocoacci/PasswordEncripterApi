@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PasswordEncripter.Entities
 {
@@ -17,5 +15,6 @@ namespace PasswordEncripter.Entities
         public string ContactMail { get; set; }
         public DateTimeOffset CreatedOn { get; set; }
         public DateTimeOffset? UpdatedOn { get; set; }
+        public virtual User User { get; set; }
     }
 }
