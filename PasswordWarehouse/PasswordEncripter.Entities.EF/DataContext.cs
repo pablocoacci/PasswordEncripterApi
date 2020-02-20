@@ -6,17 +6,23 @@ namespace PasswordEncripter.Entities.EF
 {
     public class DataContext : IdentityDbContext<User>
     {
+        public DataContext(DbContextOptions options)
+            : base(options)
+        {
+        }
+
         public DbSet<PasswordSite> PasswordSites { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new PasswordSiteMapping);
             base.OnModelCreating(modelBuilder);
+            //modelBuilder.ApplyConfiguration(new PasswordSiteMapping());
+            modelBuilder.ApplyConfiguration(new UserMapping());
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder.UseLazyLoadingProxies());
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    base.OnConfiguring(optionsBuilder.UseLazyLoadingProxies());
+        //}
     }
 }

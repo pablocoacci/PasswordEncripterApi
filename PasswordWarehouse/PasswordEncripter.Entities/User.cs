@@ -8,10 +8,10 @@ namespace PasswordEncripter.Entities
     {
         public User(string userName) : base(userName) 
         {
-            PasswordSites = new Collection<PasswordSite>();
+            //PasswordSites = new Collection<PasswordSite>();
         }
 
         public string PassEncripter { get; set; }
-        public virtual ICollection<PasswordSite> PasswordSites { get; set; }
+        //public virtual ICollection<PasswordSite> PasswordSites { get; set; }
     }
 }

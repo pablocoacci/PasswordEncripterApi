@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using PasswordEncripter.Entities.EF;
 
 namespace PasswordEncripterApi.Controllers
 {
@@ -18,9 +19,11 @@ namespace PasswordEncripterApi.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, DataContext cc)
         {
             _logger = logger;
+
+            var pp = cc.Users;
         }
 
         [HttpGet]
