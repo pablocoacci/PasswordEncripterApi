@@ -16,8 +16,8 @@ namespace PasswordEncripter.Entities.EF
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            //modelBuilder.ApplyConfiguration(new PasswordSiteMapping());
             modelBuilder.ApplyConfiguration(new UserMapping());
+            modelBuilder.ApplyConfiguration(new PasswordSiteMapping());
         }
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

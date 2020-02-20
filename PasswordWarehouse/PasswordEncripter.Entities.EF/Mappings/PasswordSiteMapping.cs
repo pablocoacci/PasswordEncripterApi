@@ -47,10 +47,10 @@ namespace PasswordEncripter.Entities.EF.Mappings
                 .IsUnicode(true)
                 .HasMaxLength(50);
 
-            //builder.HasOne(x => x.User)
-            //    .WithMany(x => x.PasswordSites)
-            //    .HasForeignKey(x => x.UserId);
-                
+            builder.HasOne(x => x.User)
+                .WithMany(x => x.PasswordSites)
+                .HasForeignKey(x => x.UserId);
+
         }
     }
 }
