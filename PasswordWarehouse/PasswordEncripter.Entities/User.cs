@@ -11,6 +11,9 @@ namespace PasswordEncripter.Entities
             PasswordSites = new Collection<PasswordSite>();
         }
 
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Dni { get; set; }
         public string PassEncripter { get; set; }
         public virtual ICollection<PasswordSite> PasswordSites { get; set; }
     }
